@@ -3,6 +3,10 @@
 #include "Module/Rtos/Rtos.h"
 #include "ReportHandler.h"
 #include "config.h"
+#include ".\Bargraf.h"
+#include <stdio.h>
+#include<chrono>
+#include<thread>
 
 //*******************************************************************
 class myTimerTask : public TaskManager::Task
@@ -70,13 +74,16 @@ int main(void)
   myRtosTask  rtosTask ( rtos );
 
   rtosTask.start();
+  Bargraf b('-');
 
   while(1)
   {
+    /*
     if( char *str = terminal.getString() )
     {
       terminal.printf( "\r\n=>%s\r\n", str );
     }
+    */
 
     switch( enc.getEvent() )
     {
@@ -90,11 +97,13 @@ int main(void)
     {
         led0.toggle();
     }
-
+    b.draw(num);
+    /*
     disp.printf( 1, 0, "timer:%-5d ", timerTask.cnt );
     disp.printf( 2, 0, "rtos: %-5d ", rtosTask.cnt  );
     disp.printf( 3, 0, "num:  %-5d ", num           );
     disp.refresh();
+    */
   }
 }
 //EOF
