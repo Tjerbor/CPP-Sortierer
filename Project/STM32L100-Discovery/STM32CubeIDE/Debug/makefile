@@ -82,8 +82,8 @@ all: main-build
 main-build: STM32L1xx.elf secondary-outputs
 
 # Tool invocations
-STM32L1xx.elf STM32L1xx.map: $(OBJS) $(USER_OBJS) C:\Users\Thiemo\Documents\emb\Template\Project\STM32L100-Discovery\STM32CubeIDE\STM32L100RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "STM32L1xx.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Thiemo\Documents\emb\Template\Project\STM32L100-Discovery\STM32CubeIDE\STM32L100RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L1xx.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+STM32L1xx.elf STM32L1xx.map: $(OBJS) $(USER_OBJS) C:\Users\Thiemo\Documents\emb\CPP-Sortierer\Project\STM32L100-Discovery\STM32CubeIDE\STM32L100RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "STM32L1xx.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Thiemo\Documents\emb\CPP-Sortierer\Project\STM32L100-Discovery\STM32CubeIDE\STM32L100RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L1xx.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

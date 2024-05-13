@@ -1,4 +1,5 @@
-Src/Bargraf.o: C:/Users/Thiemo/Documents/emb/Template/Src/Bargraf.cpp \
+Src/Bargraf.o: \
+ C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/Bargraf.cpp \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/EmbSysLib.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Mcu_Types.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Sys/stm32l1xx.h \
@@ -134,7 +135,7 @@ Src/Bargraf.o: C:/Users/Thiemo/Documents/emb/Template/Src/Bargraf.cpp \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoder.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoderRotaryknob.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalIndicator.h \
- C:/Users/Thiemo/Documents/emb/Template/Src/.\Bargraf.h
+ C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/.\Bargraf.h
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/EmbSysLib.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Mcu_Types.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Sys/stm32l1xx.h:
@@ -270,4 +271,4 @@ C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoderJoyst
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoder.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoderRotaryknob.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalIndicator.h:
-C:/Users/Thiemo/Documents/emb/Template/Src/.\Bargraf.h:
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/.\Bargraf.h:

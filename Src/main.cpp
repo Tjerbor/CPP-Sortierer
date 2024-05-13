@@ -96,8 +96,15 @@ int main(void)
     if( btnA.getEvent() == Digital::ACTIVATED )
     {
         led0.toggle();
+        motor.toggle();
+        num = 20;
     }
+
     b.draw(num);
+    disp.printf( 3, 0, "timer:%-5d ", timerTask.cnt );
+    disp.refresh();
+    //disp.printf(1,0,"Bargrafs:%-5d",b.getAmount());
+    //disp.refresh();
     /*
     disp.printf( 1, 0, "timer:%-5d ", timerTask.cnt );
     disp.printf( 2, 0, "rtos: %-5d ", rtosTask.cnt  );

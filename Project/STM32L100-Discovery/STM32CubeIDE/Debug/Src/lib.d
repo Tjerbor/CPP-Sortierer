@@ -1,4 +1,4 @@
-Src/lib.o: C:/Users/Thiemo/Documents/emb/Template/Src/lib.cpp \
+Src/lib.o: C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/lib.cpp \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/EmbSysLib.cpp \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/EmbSysLib.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Mcu_Types.h \

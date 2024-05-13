@@ -35,10 +35,16 @@ void Bargraf::draw(int length)
     if(length < 0)
     {
         disp.printf(0,0,"%20s", res.c_str());
+        disp.printf(1,0,"%-20s", res.c_str());
+        disp.printf(2,0,"%20s", res.c_str());
+       // disp.printf(3,0,"%-20s", res.c_str());
     }
     else
     {
         disp.printf(0,0,"%-20s", res.c_str());
+        disp.printf(1,0,"%20s", res.c_str());
+        disp.printf(2,0,"%-20s", res.c_str());
+     //   disp.printf(3,0,"%20s", res.c_str());
     }
     disp.refresh();
     //std::printf("%s", res.c_str());

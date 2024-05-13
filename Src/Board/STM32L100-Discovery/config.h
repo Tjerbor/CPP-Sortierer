@@ -55,6 +55,7 @@ Digital    btnA    ( portA, 0, Digital::In,   0 ); // B1 (user button)
 Digital    rotA    ( portA, 8, Digital::InPU, 1 );
 Digital    rotB    ( portA, 1, Digital::InPU, 1 );
 Digital    rotCtrl ( portA,15, Digital::InPU, 1 );
+Digital motor(portB, 4, Digital::Out, 0);
 
 DigitalEncoderRotaryknob  enc( &rotA, &rotB, &rotCtrl, taskManager );
 
