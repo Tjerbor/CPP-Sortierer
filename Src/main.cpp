@@ -136,11 +136,11 @@ int main(void) {
 		} else if (state == 2 and band_counter == 45) { //FALSE
 			state = 1;
 		} else if (state == 10) { //CHECK COLOUR
-			if (clr >= 13050 and clr <= 15000) { //RED
+			if (clr >= 10000 and clr <= 15000) { //RED
 				top = "RED";
 				state = 11;
-			} else if (clr >= 12000 and clr <= 12999) { //WHITE
-				top = "WHITE";
+			} else if (clr >= 35000 and clr <= 40000) { //WHITE/BROWN
+				top = "WHITE/BROWN";
 				state = 21;
 			} else if (clr >= 58000 and clr <= 61500) { //BLUE
 				top = "BLUE";
