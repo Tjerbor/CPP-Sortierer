@@ -156,7 +156,10 @@ int main(void)
 		//System::delayMilliSec(1000);
 
 		//b.draw(num);
-		//disp.printf(1,0,"clr:%-16s",Signal_Farbe.getRaw());
+		disp.printf( 1, 0, "clr:%-5d", Signal_Farbe.getRaw() );
+		disp.printf( 1, 10, "drk:%-5d", Signal_Druck.getRaw() );
+		disp.printf( 2, 0, "light:%-5d ", Light_Stapel.get() );
+		disp.printf( 2, 10, "band:%-5d ", Inkremental_Band.get() );
 		disp.printf( 3, 0, "timer:%-5d ", timerTask.cnt );
 		disp.refresh();
 		//disp.printf(1,0,"Bargrafs:%-5d",b.getAmount());

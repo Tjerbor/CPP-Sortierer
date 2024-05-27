@@ -23,6 +23,10 @@ using namespace EmbSysLib::Mod;
 //*******************************************************************
 PinConfig::MAP PinConfig::table[] =
 {
+		//ADC
+		ADC12_IN3_PA3,
+		ADC12_IN2_PA2,
+
 		// SPI
 		SPI2_MOSI_PB15,
 		SPI2_MISO_PB14,
@@ -65,8 +69,13 @@ Digital Ventil_Ausw(portB, 1,Digital::Out,0);
 Digital Ventil_Verarb(portB, 6,Digital::Out,0);
 Digital Motor_Pumpe(portB,8,Digital::Out,0);
 
-//Adc_Mcu  adc(timer);
-//AnalogInAdc   Signal_Farbe   ( adc, 3 );
+Digital Light_Stapel(portA,6,Digital::InPU,0);
+Digital Light_Verarb(portA,7,Digital::InPU,0);
+Digital Inkremental_Band(portC,2,Digital::InPU,0);
+
+Adc_Mcu  adc(timer);
+AnalogInAdc   Signal_Farbe   ( adc, 3 );
+AnalogInAdc   Signal_Druck (adc,2);
 
 DigitalEncoderRotaryknob  enc( &rotA, &rotB, &rotCtrl, taskManager );
 
