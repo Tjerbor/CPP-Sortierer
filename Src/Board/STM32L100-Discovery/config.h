@@ -54,28 +54,27 @@ Port_Mcu   portB( Port_Mcu::PB );
 Port_Mcu   portC( Port_Mcu::PC );
 Port_Mcu   portD( Port_Mcu::PD );
 
-Digital    led0    ( portC, 8, Digital::Out,  0 ); // LD4 (blue)
-Digital    btnA    ( portA, 0, Digital::In,   0 ); // B1 (user button)
-Digital PC0(portC,0,Digital::InPU,0);
-Digital PC1(portC,1,Digital::InPU,0);
-Digital PC6(portC,6,Digital::InPU,0);
-Digital PC7(portC,7,Digital::InPU,0);
-Digital    rotA    ( portA, 8, Digital::InPU, 1 );
-Digital    rotB    ( portA, 1, Digital::InPU, 1 );
-Digital    rotCtrl ( portA,15, Digital::InPU, 1 );
+Digital led0(portC, 8, Digital::Out, 0); // LD4 (blue)
+Digital btnA(portA, 0, Digital::In, 0); // B1 (user button)
+Digital PC0(portC, 0, Digital::InPU, 0);
+Digital PC1(portC, 1, Digital::InPU, 0);
+Digital PC6(portC, 6, Digital::InPU, 0);
+Digital PC7(portC, 7, Digital::InPU, 0);
+Digital rotA(portA, 8, Digital::InPU, 1);
+Digital rotB(portA, 1, Digital::InPU, 1);
+Digital rotCtrl(portA, 15, Digital::InPU, 1);
 Digital Motor_Band(portB, 4, Digital::Out, 0);
-Digital Ventil_Stapel(portB, 0,Digital::Out,0);
-Digital Ventil_Ausw(portB, 1,Digital::Out,0);
-Digital Ventil_Verarb(portB, 6,Digital::Out,0);
-Digital Motor_Pumpe(portB,8,Digital::Out,0);
+Digital Ventil_Stapel(portB, 0, Digital::Out, 0);
+Digital Ventil_Ausw(portB, 1, Digital::Out, 0);
+Digital Ventil_Verarb(portB, 6, Digital::Out, 0);
+Digital Motor_Pumpe(portB, 8, Digital::Out, 0);
+Digital Light_Stapel(portA, 6, Digital::InPU, 0);
+Digital Light_Verarb(portA, 7, Digital::InPU, 0);
+Digital Inkremental_Band(portC, 2, Digital::InPU, 0);
 
-Digital Light_Stapel(portA,6,Digital::InPU,0);
-Digital Light_Verarb(portA,7,Digital::InPU,0);
-Digital Inkremental_Band(portC,2,Digital::InPU,0);
-
-Adc_Mcu  adc(timer);
-AnalogInAdc   Signal_Farbe   ( adc, 3 );
-AnalogInAdc   Signal_Druck (adc,2);
+Adc_Mcu adc(timer);
+AnalogInAdc Signal_Farbe(adc, 3);
+AnalogInAdc Signal_Druck(adc, 2);
 
 DigitalEncoderRotaryknob  enc( &rotA, &rotB, &rotCtrl, taskManager );
 
