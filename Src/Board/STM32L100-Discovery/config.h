@@ -56,10 +56,10 @@ Port_Mcu   portD( Port_Mcu::PD );
 
 Digital led0(portC, 8, Digital::Out, 0); // LD4 (blue)
 Digital btnA(portA, 0, Digital::In, 0); // B1 (user button)
-Digital PC0(portC, 0, Digital::InPU, 0);
-Digital PC1(portC, 1, Digital::InPU, 0);
-Digital PC6(portC, 6, Digital::InPU, 0);
-Digital PC7(portC, 7, Digital::InPU, 0);
+Digital PC0(portC, 0, Digital::InPU, 1);
+Digital PC1(portC, 1, Digital::InPU, 1);
+Digital PC6(portC, 6, Digital::InPU, 1);
+Digital PC7(portC, 7, Digital::InPU, 1);
 Digital rotA(portA, 8, Digital::InPU, 1);
 Digital rotB(portA, 1, Digital::InPU, 1);
 Digital rotCtrl(portA, 15, Digital::InPU, 1);
