@@ -74,7 +74,6 @@ int main(void) {
 	rtosTask.start();
 
 	int state = 0;
-	bool enough_pressure = false;
 
 	int last_band = -1;
 	int band_counter = -1;
@@ -112,16 +111,14 @@ int main(void) {
 
 		int pressure = Signal_Druck.getRaw(); //AUTOMATIC PRESSURE CONTROL
 		if (pressure < 18000) {
-			enough_pressure = false;
 			Motor_Pumpe.set(1);
 		} else if (pressure > 20000) {
-			enough_pressure = true;
 			Motor_Pumpe.set(0);
 		}
 
 		int clr = Signal_Farbe.getRaw();
 		if (mode) { //AUTOMATIC TREE
-			if (state == 0 and enough_pressure and Light_Stapel.get() == 1) { // NO JOB
+			if (state == 0 and Light_Stapel.get() == 1) { // NO JOB
 				state = 10;
 				Ventil_Stapel.set(1);
 				timerTask.delay(350);
