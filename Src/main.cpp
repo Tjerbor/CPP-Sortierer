@@ -3,7 +3,9 @@
 #include "Module/Rtos/Rtos.h"
 #include "ReportHandler.h"
 #include "config.h"
-#include ".\Bargraf.h"
+#include "state.h"
+#include "bandCounter.h"
+#include "pressureControl.h"
 #include <stdio.h>
 #include<chrono>
 #include<thread>
@@ -30,6 +32,11 @@ public:
 	//---------------------------------------------------------------
 	DWORD cnt;
 };
+
+//*******************************************************************
+
+//*******************************************************************
+
 
 //*******************************************************************
 class myRtosTask: public Rtos::Task {
@@ -61,25 +68,22 @@ Rtos rtos(2,   // max num of tasks
 		1000); // time slice in us
 
 //*******************************************************************
+
+myBandCounter bandCounter(taskManager);
+myPressureControl pressureControl(taskManager);
+myTimerTask timerTask(taskManager);
+
+extern State *zustand;
+
 int main(void) {
 	disp.printf(0, 0, __DATE__ " " __TIME__);
 	terminal.printf( __DATE__ " " __TIME__ "\r\n");
 
 	int num = 0;
 
-	myTimerTask timerTask(taskManager);
-
 	myRtosTask rtosTask(rtos);
 
 	rtosTask.start();
-
-	int state = 0;
-
-	int last_band = -1;
-	int band_counter = -1;
-
-	bool mode = false; //MANUAL OR AUTOMATIC
-	std::string job = "NO JOB";
 
 	while (1) {
 		/*
@@ -103,128 +107,14 @@ int main(void) {
 			break;
 		}
 
-		int new_band = Inkremental_Band.get(); //COUNTS BANDS
-		if (new_band != last_band) {
-			band_counter++;
-			last_band = new_band;
-		}
+		zustand->refresh();
 
-		int pressure = Signal_Druck.getRaw(); //AUTOMATIC PRESSURE CONTROL
-		if (pressure < 18000) {
-			Motor_Pumpe.set(1);
-		} else if (pressure > 20000) {
-			Motor_Pumpe.set(0);
-		}
-
-		int clr = Signal_Farbe.getRaw();
-		if (mode) { //AUTOMATIC TREE
-			if (state == 0 and Light_Stapel.get() == 1) { // NO JOB
-				state = 10;
-				Ventil_Stapel.set(1);
-				timerTask.delay(350);
-				Ventil_Stapel.set(0);
-				timerTask.delay(300);
-			} else if (state == 1) { //FINISH JOB
-				Ventil_Verarb.set(0);
-				Ventil_Ausw.set(0);
-				Ventil_Stapel.set(0);
-				Motor_Band.set(0);
-				job = "NO JOB";
-				state = 0;
-			} else if (state == 2 and band_counter == 45) { //FALSE
-				state = 1;
-			} else if (state == 10) { //CHECK COLOUR
-				if (clr >= 10000 and clr <= 15000) { //RED
-					job = "RED";
-					state = 11;
-				} else if (clr >= 35000 and clr <= 40000) { //WHITE/BROWN
-					job = "WHITE/BROWN";
-					state = 21;
-				} else if (clr >= 58000 and clr <= 61500) { //BLUE
-					job = "BLUE";
-					state = 31;
-				} else if (clr >= 62000) { //FALSE
-					job = "ERROR";
-					state = 2;
-				}
-				band_counter = 0;
-				Motor_Band.set(1);
-
-			} else if (state == 11 and band_counter == 15) {
-				Motor_Band.set(0);
-				Ventil_Ausw.set(1);
-				timerTask.delay(350);
-				Ventil_Ausw.set(0);
-				state = 1;
-			} else if (state == 21 and band_counter == 37) {
-				state = 1;
-			} else if (state == 31 and band_counter == 30) {
-				Motor_Band.set(0);
-				Ventil_Verarb.set(1);
-				timerTask.delay(350);
-				Ventil_Verarb.set(0);
-				timerTask.delay(400);
-				Motor_Band.set(1);
-				state = 32;
-			} else if (state == 32 and band_counter == 37) {
-				Motor_Band.set(0);
-				state = 1;
-			}
-		} else { //MANUAL TREE
-			if (PC0.getEvent() == Digital::ACTIVATED) { //MOTOR_BAND
-				Motor_Band.toggle();
-			} else if (PC1.getEvent() == Digital::ACTIVATED) { //STEMPEL
-				Ventil_Verarb.set(1);
-				timerTask.delay(350);
-				Ventil_Verarb.set(0);
-			} else if (PC6.getEvent() == Digital::ACTIVATED) { //AUSWAHL
-				Ventil_Ausw.set(1);
-				timerTask.delay(350);
-				Ventil_Ausw.set(0);
-			} else if (PC7.getEvent() == Digital::ACTIVATED) { //STAPEL
-				Ventil_Stapel.set(1);
-				timerTask.delay(350);
-				Ventil_Stapel.set(0);
-			}
-
-		}
-
-		if (state == 0 and btnA.getEvent() == Digital::ACTIVATED) { //TOGGLE MODE
-			Ventil_Verarb.set(0);
-			Ventil_Ausw.set(0);
-			Ventil_Stapel.set(0);
-			Motor_Band.set(0);
-			mode = !mode;
-			led0.toggle();
-		}
-
-		if (mode) {
-			disp.printf(0, 0, "MODE:AUTOMATIC      ");
-			disp.printf(1, 0, "%-20s", job.c_str());
-		} else {
-			disp.printf(0, 0, "MODE:MANUAL         ");
-			if (clr >= 10000 and clr <= 15000) { //RED
-				disp.printf(1, 0, "RED                    ");
-			} else if (clr >= 35000 and clr <= 40000) { //WHITE/BROWN
-				disp.printf(1, 0, "WHITE/BROWN            ");
-			} else if (clr >= 58000 and clr <= 61500) { //BLUE
-				disp.printf(1, 0, "BLUE                   ");
-			} else {
-				disp.printf(1, 0, "                       ");
-			}
-		}
-		disp.printf(2, 0, "clr:%-5d", Signal_Farbe.getRaw());
-		disp.printf(2, 10, "drk:%-5d", Signal_Druck.getRaw());
-		disp.printf(3, 0, "bndcnt:%-5d ", band_counter);
-		disp.printf(3, 13, "st:%-5d ", state);
-		disp.refresh();
-
-		/*
-		 disp.printf( 1, 0, "timer:%-5d ", timerTask.cnt );
-		 disp.printf( 2, 0, "rtos: %-5d ", rtosTask.cnt  );
-		 disp.printf( 3, 0, "num:  %-5d ", num           );
-		 disp.refresh();
+		/*if (mode) {
+		 disp.printf(0, 0, "MODE:AUTOMATIC      ");
+		 disp.printf(1, 0, "%-20s", job.c_str());
+		 }
 		 */
+
 	}
 }
 //EOF

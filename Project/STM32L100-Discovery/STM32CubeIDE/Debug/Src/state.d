@@ -1,4 +1,4 @@
-Src/main.o: C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/main.cpp \
+Src/state.o: C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/EmbSysLib.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Mcu_Types.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Sys/stm32l1xx.h \
@@ -134,14 +134,11 @@ Src/main.o: C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/main.cpp \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoder.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoderRotaryknob.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalIndicator.h \
+ C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.h \
+ C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/pressureControl.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Module/Rtos/Rtos.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Src/Rtos_Mcu.h \
  ../../../../Src/Board/STM32L100-Discovery/ReportHandler.h \
- ../../../../Src/Board/STM32L100-Discovery/config.h \
- C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/Peripheral/Display/DisplayChar_DIP204spi.cpp \
- C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/Peripheral/Display/DisplayChar_DIP204spi.h \
- C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.h \
- C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/pressureControl.h \
  C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/bandCounter.h
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/EmbSysLib.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Mcu_Types.h:
@@ -278,12 +275,9 @@ C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoderJoyst
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoder.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoderRotaryknob.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalIndicator.h:
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.h:
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/pressureControl.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Module/Rtos/Rtos.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Src/Rtos_Mcu.h:
 ../../../../Src/Board/STM32L100-Discovery/ReportHandler.h:
-../../../../Src/Board/STM32L100-Discovery/config.h:
-C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/Peripheral/Display/DisplayChar_DIP204spi.cpp:
-C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/Peripheral/Display/DisplayChar_DIP204spi.h:
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.h:
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/pressureControl.h:
 C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/bandCounter.h:

@@ -2,3 +2,4 @@
 "./Src/lib.o"
 "./Src/main.o"
 "./Src/startup.o"
+"./Src/state.o"
