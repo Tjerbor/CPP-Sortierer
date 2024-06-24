@@ -1,4 +1,6 @@
-Src/state.o: C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp \
+Src/stateHandler.o: \
+ C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/stateHandler.cpp \
+ C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/EmbSysLib.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Mcu_Types.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Sys/stm32l1xx.h \
@@ -134,12 +136,12 @@ Src/state.o: C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoder.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoderRotaryknob.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalIndicator.h \
- C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.h \
  C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/pressureControl.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Module/Rtos/Rtos.h \
  C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Src/Rtos_Mcu.h \
  C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/bandCounter.h \
- C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/timerTask.h
+ C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/statehandler.h
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/EmbSysLib.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Mcu_Types.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Sys/stm32l1xx.h:
@@ -275,9 +277,8 @@ C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoderJoyst
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoder.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalEncoderRotaryknob.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Control/DigitalIndicator.h:
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.h:
 C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/pressureControl.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Module/Rtos/Rtos.h:
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Hardware/MCU/STM32L1xx/Src/Rtos_Mcu.h:
 C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/bandCounter.h:
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/timerTask.h:
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/statehandler.h:

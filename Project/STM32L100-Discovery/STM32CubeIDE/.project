@@ -91,5 +91,20 @@
 			<type>1</type>
 			<locationURI>PARENT-3-PROJECT_LOC/Src/state.h</locationURI>
 		</link>
+		<link>
+			<name>Src/stateHandler.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Src/stateHandler.cpp</locationURI>
+		</link>
+		<link>
+			<name>Src/stateHandler.h</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Src/stateHandler.h</locationURI>
+		</link>
+		<link>
+			<name>Src/timerTask.h</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Src/timerTask.h</locationURI>
+		</link>
 	</linkedResources>
 </projectDescription>

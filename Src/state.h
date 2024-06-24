@@ -1,6 +1,7 @@
 #include "EmbSysLib.h"
 #include "pressureControl.h"
 #include "bandCounter.h"
+#pragma once
 
 using namespace EmbSysLib::Hw;
 using namespace EmbSysLib::Dev;
@@ -12,26 +13,78 @@ extern myBandCounter bandCounter;
 extern AnalogInAdc Signal_Farbe;
 extern AnalogInAdc Signal_Druck;
 
+extern ScreenChar disp;
+
 class State {
 public:
-	State();
-	~State();
-	virtual bool satisfied() = 0;
-	virtual void transition() = 0;
-	void refresh() {
-		if (satisfied()) {
-			transition();
-		}
-	}
+	virtual int satisfied() = 0;
+	virtual void transition(int destination = 0) = 0;
 	virtual void display() {
-		/*
-		disp.printf(0, 0, "MODE:AUTOMATIC      ");
-		disp.printf(1, 0, "%-20s", job.c_str());
-		disp.printf(2, 0, "clr:%-5d", Signal_Farbe.getRaw());
-		disp.printf(2, 10, "drk:%-5d", pressureControl.getPressure());
-		disp.printf(3, 0, "bndcnt:%-5d ", bandCounter.getCounter());
-		disp.printf(3, 13, "st:%-5d ", -1);
-		disp.refresh();
-		*/
+		 disp.printf(2, 0, "clr:%-5d", Signal_Farbe.getRaw());
+		 disp.printf(2, 10, "drk:%-5d", pressureControl.getPressure());
+		 disp.printf(3, 0, "bndcnt:%-5d ", bandCounter.getCounter());
 	}
+};
+
+class Manual: public State { //0
+public:
+	int satisfied();
+	void transition(int destination = 0);
+	void display();
+};
+
+class StapelDetect: public State { //1
+public:
+	int satisfied();
+	void transition(int destination = 0);
+	void display();
+};
+
+class CLRDetect: public State { //10
+public:
+	int satisfied();
+	void transition(int destination = 0);
+	void display();
+};
+
+class Red: public State { //20
+public:
+	int satisfied();
+	void transition(int destination = 0);
+	void display();
+};
+
+class White: public State { //30
+public:
+	int satisfied();
+	void transition(int destination = 0);
+	void display();
+};
+
+class Blue: public State { //40
+public:
+	int satisfied();
+	void transition(int destination = 0);
+	void display();
+};
+
+class BluePass: public State { //41
+public:
+	int satisfied();
+	void transition(int destination = 0);
+	void display();
+};
+
+class Error: public State { //-1
+public:
+	int satisfied();
+	void transition(int destination = 0);
+	void display();
+};
+
+class Finish: public State { //2
+public:
+	int satisfied();
+	void transition(int destination = 0);
+	void display();
 };

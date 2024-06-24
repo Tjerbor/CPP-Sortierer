@@ -3,35 +3,15 @@
 #include "Module/Rtos/Rtos.h"
 #include "ReportHandler.h"
 #include "config.h"
-#include "state.h"
+#include "stateHandler.h"
 #include "bandCounter.h"
 #include "pressureControl.h"
+#include "timerTask.h"
 #include <stdio.h>
 #include<chrono>
 #include<thread>
 
 //*******************************************************************
-class myTimerTask: public TaskManager::Task {
-public:
-	//---------------------------------------------------------------
-	myTimerTask(TaskManager &taskManager) {
-		cnt = 0;
-		taskManager.add(this);
-	}
-
-	//---------------------------------------------------------------
-	virtual void update(void) {
-		cnt++;
-	}
-	void delay(uint32_t millis) {
-		uint32_t cntinitial = cnt;
-		uint32_t diff = (uint32_t) millis / 10;
-		while (cnt - cntinitial < diff) {
-		}
-	}
-	//---------------------------------------------------------------
-	DWORD cnt;
-};
 
 //*******************************************************************
 
@@ -73,13 +53,12 @@ myBandCounter bandCounter(taskManager);
 myPressureControl pressureControl(taskManager);
 myTimerTask timerTask(taskManager);
 
-extern State *zustand;
-
 int main(void) {
 	disp.printf(0, 0, __DATE__ " " __TIME__);
 	terminal.printf( __DATE__ " " __TIME__ "\r\n");
 
 	int num = 0;
+	StateHandler derEpicHandler;
 
 	myRtosTask rtosTask(rtos);
 
@@ -107,7 +86,7 @@ int main(void) {
 			break;
 		}
 
-		zustand->refresh();
+		derEpicHandler.refresh();
 
 		/*if (mode) {
 		 disp.printf(0, 0, "MODE:AUTOMATIC      ");

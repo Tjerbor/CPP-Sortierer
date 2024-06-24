@@ -1,7 +1,6 @@
 #pragma once
 #include "EmbSysLib.h"
 #include "Module/Rtos/Rtos.h"
-#include "ReportHandler.h"
 
 using namespace EmbSysLib::Hw;
 using namespace EmbSysLib::Dev;

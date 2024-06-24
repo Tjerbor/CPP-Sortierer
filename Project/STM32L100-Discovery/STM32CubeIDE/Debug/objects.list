@@ -3,3 +3,4 @@
 "./Src/main.o"
 "./Src/startup.o"
 "./Src/state.o"
+"./Src/stateHandler.o"
