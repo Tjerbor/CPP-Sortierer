@@ -20,9 +20,9 @@ public:
 	virtual int satisfied() = 0;
 	virtual void transition(int destination = 0) = 0;
 	virtual void display() {
-		 disp.printf(2, 0, "clr:%-5d", Signal_Farbe.getRaw());
-		 disp.printf(2, 10, "drk:%-5d", pressureControl.getPressure());
-		 disp.printf(3, 0, "bndcnt:%-5d ", bandCounter.getCounter());
+		disp.printf(2, 0, "clr:%-5d", Signal_Farbe.getRaw());
+		disp.printf(2, 10, "drk:%-5d", pressureControl.getPressure());
+		disp.printf(3, 0, "bndcnt:%-5d ", bandCounter.getCounter());
 	}
 };
 

@@ -19524,13 +19524,13 @@ LOAD C:/ST/STM32CubeIDE_1.15.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x0000f161      0x673 ./Src/state.o
  .debug_macro   0x0000f7d4      0x673 ./Src/stateHandler.o
 
-.debug_line     0x00000000    0x12406
+.debug_line     0x00000000    0x12400
  .debug_line    0x00000000     0x232a ./Src/Bargraf.o
  .debug_line    0x0000232a     0x9aef ./Src/lib.o
- .debug_line    0x0000be19     0x2ee4 ./Src/main.o
- .debug_line    0x0000ecfd       0x8d ./Src/startup.o
- .debug_line    0x0000ed8a     0x1ce1 ./Src/state.o
- .debug_line    0x00010a6b     0x199b ./Src/stateHandler.o
+ .debug_line    0x0000be19     0x2ee0 ./Src/main.o
+ .debug_line    0x0000ecf9       0x8d ./Src/startup.o
+ .debug_line    0x0000ed86     0x1ce1 ./Src/state.o
+ .debug_line    0x00010a67     0x1999 ./Src/stateHandler.o
 
 .debug_str      0x00000000    0x54657
  .debug_str     0x00000000    0x3ebc1 ./Src/Bargraf.o

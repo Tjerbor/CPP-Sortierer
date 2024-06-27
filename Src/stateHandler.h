@@ -1,7 +1,5 @@
 #include "state.h"
 
-
-
 class StateHandler {
 private:
 	State *zustand;

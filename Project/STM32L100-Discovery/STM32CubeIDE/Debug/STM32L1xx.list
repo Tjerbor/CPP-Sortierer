@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  0000fe47  00000000  00000000  0005c22a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00012406  00000000  00000000  0006c071  2**0
+ 17 .debug_line   00012400  00000000  00000000  0006c071  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00054657  00000000  00000000  0007e477  2**0
+ 18 .debug_str    00054657  00000000  00000000  0007e471  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000d2ace  2**0
+ 19 .comment      00000043  00000000  00000000  000d2ac8  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  0001bdd8  00000000  00000000  000d2b14  2**2
+ 20 .debug_frame  0001bdd8  00000000  00000000  000d2b0c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 000000c5  00000000  00000000  000ee8ec  2**0
+ 21 .debug_line_str 000000c5  00000000  00000000  000ee8e4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -11361,8 +11361,8 @@ public:
  8004dee:	4770      	bx	lr
 
 08004df0 <_ZN10myRtosTaskC1ERN9EmbSysLib3Mod4RtosE>:
-
 //*******************************************************************
+
 class myRtosTask: public Rtos::Task {
 public:
 	//---------------------------------------------------------------
@@ -11458,10 +11458,8 @@ int main(void) {
  8004e76:	1d3b      	adds	r3, r7, #4
  8004e78:	4618      	mov	r0, r3
  8004e7a:	f7ff fca3 	bl	80047c4 <_ZN9EmbSysLib3Mod4Rtos4Task5startEv>
-		 {
-		 terminal.printf( "\r\n=>%s\r\n", str );
-		 }
-		 */
+
+	while (1) {
 
 		switch (enc.getEvent()) {
  8004e7e:	4814      	ldr	r0, [pc, #80]	@ (8004ed0 <main+0x8c>)
@@ -11535,9 +11533,6 @@ int main(void) {
  8004ef4:	080297f8 	.word	0x080297f8
 
 08004ef8 <_Z41__static_initialization_and_destruction_0ii>:
-		 disp.printf(1, 0, "%-20s", job.c_str());
-		 }
-		 */
 
 	}
 }
@@ -12078,7 +12073,7 @@ public:
  80052ee:	b084      	sub	sp, #16
  80052f0:	af02      	add	r7, sp, #8
  80052f2:	6078      	str	r0, [r7, #4]
-		 disp.printf(2, 0, "clr:%-5d", Signal_Farbe.getRaw());
+		disp.printf(2, 0, "clr:%-5d", Signal_Farbe.getRaw());
  80052f4:	4812      	ldr	r0, [pc, #72]	@ (8005340 <_ZN5State7displayEv+0x54>)
  80052f6:	f7fe fbdb 	bl	8003ab0 <_ZN9EmbSysLib3Dev11AnalogInAdc6getRawEv>
  80052fa:	4603      	mov	r3, r0
@@ -12088,7 +12083,7 @@ public:
  8005302:	2102      	movs	r1, #2
  8005304:	4810      	ldr	r0, [pc, #64]	@ (8005348 <_ZN5State7displayEv+0x5c>)
  8005306:	f7fe fcbe 	bl	8003c86 <_ZN9EmbSysLib3Dev10ScreenChar6printfEhhPKcz>
-		 disp.printf(2, 10, "drk:%-5d", pressureControl.getPressure());
+		disp.printf(2, 10, "drk:%-5d", pressureControl.getPressure());
  800530a:	4810      	ldr	r0, [pc, #64]	@ (800534c <_ZN5State7displayEv+0x60>)
  800530c:	f7ff ffcb 	bl	80052a6 <_ZN17myPressureControl11getPressureEv>
  8005310:	4603      	mov	r3, r0
@@ -12098,7 +12093,7 @@ public:
  8005318:	2102      	movs	r1, #2
  800531a:	480b      	ldr	r0, [pc, #44]	@ (8005348 <_ZN5State7displayEv+0x5c>)
  800531c:	f7fe fcb3 	bl	8003c86 <_ZN9EmbSysLib3Dev10ScreenChar6printfEhhPKcz>
-		 disp.printf(3, 0, "bndcnt:%-5d ", bandCounter.getCounter());
+		disp.printf(3, 0, "bndcnt:%-5d ", bandCounter.getCounter());
  8005320:	480c      	ldr	r0, [pc, #48]	@ (8005354 <_ZN5State7displayEv+0x68>)
  8005322:	f7ff ffd8 	bl	80052d6 <_ZN13myBandCounter10getCounterEv>
  8005326:	4603      	mov	r3, r0
@@ -13336,16 +13331,15 @@ class Manual: public State { //0
  8005c08:	080298c8 	.word	0x080298c8
 
 08005c0c <_ZN12StateHandlerC1Ev>:
-
 #include "state.h"
 #include "statehandler.h"
 
-StateHandler::StateHandler()
+StateHandler::StateHandler() :
  8005c0c:	b590      	push	{r4, r7, lr}
  8005c0e:	b083      	sub	sp, #12
  8005c10:	af00      	add	r7, sp, #0
  8005c12:	6078      	str	r0, [r7, #4]
-:zustand(new Manual()),zsd(0)
+		zustand(new Manual()), zsd(0) {
  8005c14:	2004      	movs	r0, #4
  8005c16:	f000 f968 	bl	8005eea <_Znwj>
  8005c1a:	4603      	mov	r3, r0
@@ -13359,7 +13353,6 @@ StateHandler::StateHandler()
  8005c2c:	687b      	ldr	r3, [r7, #4]
  8005c2e:	2200      	movs	r2, #0
  8005c30:	605a      	str	r2, [r3, #4]
-{
 
 }
  8005c32:	687b      	ldr	r3, [r7, #4]
@@ -13532,7 +13525,7 @@ class BluePass: public State { //41
 
 08005d5c <_ZN12StateHandler7refreshEv>:
 
-void StateHandler::refresh(){
+void StateHandler::refresh() {
  8005d5c:	b590      	push	{r4, r7, lr}
  8005d5e:	b085      	sub	sp, #20
  8005d60:	af00      	add	r7, sp, #0
@@ -13547,7 +13540,8 @@ void StateHandler::refresh(){
  8005d70:	4610      	mov	r0, r2
  8005d72:	4798      	blx	r3
  8005d74:	60f8      	str	r0, [r7, #12]
-	if(next != zsd){
+
+	if (next != zsd) {
  8005d76:	687b      	ldr	r3, [r7, #4]
  8005d78:	685b      	ldr	r3, [r3, #4]
  8005d7a:	68fa      	ldr	r2, [r7, #12]
@@ -13576,7 +13570,7 @@ void StateHandler::refresh(){
  8005da4:	2104      	movs	r1, #4
  8005da6:	4618      	mov	r0, r3
  8005da8:	f000 f89d 	bl	8005ee6 <_ZdlPvj>
-		if(next == 0){
+		if (next == 0) {
  8005dac:	68fb      	ldr	r3, [r7, #12]
  8005dae:	2b00      	cmp	r3, #0
  8005db0:	d10c      	bne.n	8005dcc <_ZN12StateHandler7refreshEv+0x70>
@@ -13721,6 +13715,7 @@ void StateHandler::refresh(){
  8005eca:	601c      	str	r4, [r3, #0]
 		}
 	}
+
 	zustand->display();
  8005ecc:	687b      	ldr	r3, [r7, #4]
  8005ece:	681a      	ldr	r2, [r3, #0]

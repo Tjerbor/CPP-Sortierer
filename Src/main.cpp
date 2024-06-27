@@ -13,12 +13,6 @@
 
 //*******************************************************************
 
-//*******************************************************************
-
-//*******************************************************************
-
-
-//*******************************************************************
 class myRtosTask: public Rtos::Task {
 public:
 	//---------------------------------------------------------------
@@ -65,12 +59,6 @@ int main(void) {
 	rtosTask.start();
 
 	while (1) {
-		/*
-		 if( char *str = terminal.getString() )
-		 {
-		 terminal.printf( "\r\n=>%s\r\n", str );
-		 }
-		 */
 
 		switch (enc.getEvent()) {
 		case DigitalEncoder::LEFT:
@@ -87,12 +75,6 @@ int main(void) {
 		}
 
 		derEpicHandler.refresh();
-
-		/*if (mode) {
-		 disp.printf(0, 0, "MODE:AUTOMATIC      ");
-		 disp.printf(1, 0, "%-20s", job.c_str());
-		 }
-		 */
 
 	}
 }
