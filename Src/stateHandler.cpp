@@ -1,16 +1,20 @@
 #include "state.h"
 #include "statehandler.h"
 
+//Anfangszustand = Manual
 StateHandler::StateHandler() :
-		zustand(new Manual()), zsd(0) {
-
+		zustand(new Manual()), zustandID(0) {
 }
 
 void StateHandler::refresh() {
+	//Erhalte die neue ZustandsID
 	int next = zustand->satisfied();
 
-	if (next != zsd) {
-		zsd = next;
+	//Falls die ID sich geaendert hat,
+	//erzeuge entsprechenden neuen zustand
+	//und fuehre die Uebergangsaktion aus
+	if (next != zustandID) {
+		zustandID = next;
 		zustand->transition(next);
 		delete zustand;
 		if (next == 0) {
@@ -34,5 +38,6 @@ void StateHandler::refresh() {
 		}
 	}
 
+	//Zustandsspezifische Displayausgabe
 	zustand->display();
 }

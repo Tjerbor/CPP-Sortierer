@@ -13,6 +13,8 @@ public:
 	virtual void update(void) {
 		cnt++;
 	}
+
+	//Code Verzoegerung aber cnt bleibt intakt
 	void delay(uint32_t millis) {
 		uint32_t cntinitial = cnt;
 		uint32_t diff = (uint32_t) millis / 10;

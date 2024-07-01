@@ -43,9 +43,15 @@ Rtos rtos(2,   // max num of tasks
 
 //*******************************************************************
 
+
+//----Selstdefinierte Hintergrundtasks----
+//1. Task: Zaehlt die Aenderungen des Bandes -> Banddistanz
 myBandCounter bandCounter(taskManager);
+//2. Task: Reguliert den Pneumatikdruck automatisch im gewuenschten Intervall
 myPressureControl pressureControl(taskManager);
+//3: Task: Extrem genaue Verzögerung.
 myTimerTask timerTask(taskManager);
+//-----------------------------------------
 
 int main(void) {
 	disp.printf(0, 0, __DATE__ " " __TIME__);
@@ -74,6 +80,8 @@ int main(void) {
 			break;
 		}
 
+		//Startet im Manualzustand
+		//Checkt nach Zustandsaenderung
 		derEpicHandler.refresh();
 
 	}

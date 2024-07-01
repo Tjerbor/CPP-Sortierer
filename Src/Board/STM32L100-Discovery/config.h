@@ -54,6 +54,8 @@ Port_Mcu   portB( Port_Mcu::PB );
 Port_Mcu   portC( Port_Mcu::PC );
 Port_Mcu   portD( Port_Mcu::PD );
 
+
+//Sortierer Sensoren + Aktoren
 Digital led0(portC, 8, Digital::Out, 0); // LD4 (blue)
 Digital btnA(portA, 0, Digital::In, 0); // B1 (user button)
 Digital PC0(portC, 0, Digital::InPU, 1);
@@ -72,6 +74,7 @@ Digital Light_Stapel(portA, 6, Digital::InPU, 0);
 Digital Light_Verarb(portA, 7, Digital::InPU, 0);
 Digital Inkremental_Band(portC, 2, Digital::InPU, 0);
 
+//Sortier Sensor
 Adc_Mcu adc(timer);
 AnalogInAdc Signal_Farbe(adc, 3);
 AnalogInAdc Signal_Druck(adc, 2);

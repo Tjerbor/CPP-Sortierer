@@ -1,34 +1,38 @@
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Device/Digital/Digital.h:120:18:virtual void EmbSysLib::Dev::Digital::toggle()	1
 C:/Users/Thiemo/Documents/emb/EmbSysLib-01.04.00/Src/Device/Digital/Digital.h:138:19:virtual EmbSysLib::Dev::Digital::Event EmbSysLib::Dev::Digital::getEvent()	3
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/pressureControl.h:32:6:int myPressureControl::getPressure()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/pressureControl.h:33:6:int myPressureControl::getPressure()	1
 C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/bandCounter.h:26:7:void myBandCounter::setCounter(int)	1
 C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/bandCounter.h:30:6:int myBandCounter::getCounter()	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.h:22:15:virtual void State::display()	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/timerTask.h:16:7:void myTimerTask::delay(uint32_t)	2
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:54:5:virtual int Manual::satisfied()	6
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:77:6:virtual void Manual::transition(int)	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:86:6:virtual void Manual::display()	7
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:104:5:virtual int StapelDetect::satisfied()	3
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:114:6:virtual void StapelDetect::transition(int)	3
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:130:6:virtual void StapelDetect::display()	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:137:5:virtual int CLRDetect::satisfied()	8
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:152:6:virtual void CLRDetect::transition(int)	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:157:6:virtual void CLRDetect::display()	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:164:5:virtual int Red::satisfied()	2
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:172:6:virtual void Red::transition(int)	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:179:6:virtual void Red::display()	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:186:5:virtual int White::satisfied()	2
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:194:6:virtual void White::transition(int)	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:197:6:virtual void White::display()	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:204:5:virtual int Blue::satisfied()	2
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:212:6:virtual void Blue::transition(int)	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:221:6:virtual void Blue::display()	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:228:5:virtual int BluePass::satisfied()	2
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:236:6:virtual void BluePass::transition(int)	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:239:6:virtual void BluePass::display()	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:246:5:virtual int Error::satisfied()	2
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:254:6:virtual void Error::transition(int)	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:258:6:virtual void Error::display()	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:265:5:virtual int Finish::satisfied()	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:269:6:virtual void Finish::transition(int)	1
-C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:276:6:virtual void Finish::display()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.h:43:15:virtual void State::display()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/timerTask.h:18:7:void myTimerTask::delay(uint32_t)	2
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:42:6:void State::countRed()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:46:6:void State::countWhite()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:50:6:void State::countBlue()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:54:6:void State::countError()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:60:5:virtual int Manual::satisfied()	6
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:95:6:virtual void Manual::transition(int)	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:104:6:virtual void Manual::display()	7
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:124:5:virtual int StapelDetect::satisfied()	3
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:134:6:virtual void StapelDetect::transition(int)	3
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:154:6:virtual void StapelDetect::display()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:162:5:virtual int CLRDetect::satisfied()	7
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:175:6:virtual void CLRDetect::transition(int)	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:180:6:virtual void CLRDetect::display()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:188:5:virtual int Red::satisfied()	2
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:196:6:virtual void Red::transition(int)	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:204:6:virtual void Red::display()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:212:5:virtual int White::satisfied()	2
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:220:6:virtual void White::transition(int)	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:224:6:virtual void White::display()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:232:5:virtual int Blue::satisfied()	2
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:240:6:virtual void Blue::transition(int)	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:249:6:virtual void Blue::display()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:257:5:virtual int BluePass::satisfied()	2
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:265:6:virtual void BluePass::transition(int)	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:269:6:virtual void BluePass::display()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:277:5:virtual int Error::satisfied()	2
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:285:6:virtual void Error::transition(int)	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:289:6:virtual void Error::display()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:297:5:virtual int Finish::satisfied()	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:301:6:virtual void Finish::transition(int)	1
+C:/Users/Thiemo/Documents/emb/CPP-Sortierer/Src/state.cpp:308:6:virtual void Finish::display()	1

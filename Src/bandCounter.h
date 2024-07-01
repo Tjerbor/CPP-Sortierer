@@ -14,9 +14,9 @@ public:
 		taskManager.add(this);
 	}
 
-	//---------------------------------------------------------------
+	//Bandcounter inkrementiert wenn sich der Bandtaster geaendert hat.
 	virtual void update(void) {
-		int new_band = Inkremental_Band.get(); //COUNTS BANDS
+		int new_band = Inkremental_Band.get();
 		if (new_band != last_band) {
 			band_counter++;
 			last_band = new_band;
