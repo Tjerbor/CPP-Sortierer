@@ -1,4 +1,3 @@
-"./Src/Bargraf.o"
 "./Src/lib.o"
 "./Src/main.o"
 "./Src/startup.o"

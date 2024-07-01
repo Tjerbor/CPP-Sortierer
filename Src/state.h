@@ -15,6 +15,7 @@ extern AnalogInAdc Signal_Druck;
 
 extern ScreenChar disp;
 
+//Oberklasse aller Zustaende
 class State {
 
 //Anzahl verarbeiteter Pellets
@@ -22,6 +23,7 @@ private:
 	inline static int red_counter;
 	inline static int white_counter;
 	inline static int blue_counter;
+
 	//Undefinierte Farbe
 	inline static int error_counter;
 
@@ -37,7 +39,6 @@ public:
 	virtual int satisfied() = 0;
 	//Aktion beim Zustandswechsel fuer entsprechendes Ziel
 	virtual void transition(int destination) = 0;
-
 
 	//Displayausgabe
 	virtual void display() {
@@ -67,7 +68,6 @@ public:
 	void display();
 };
 
-
 //ID = 10
 class CLRDetect: public State {
 public:
@@ -75,7 +75,6 @@ public:
 	void transition(int destination = 0);
 	void display();
 };
-
 
 //ID = 20
 class Red: public State {

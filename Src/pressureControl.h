@@ -19,7 +19,6 @@ public:
 		taskManager.add(this);
 	}
 
-
 	//Duck wird ins Intervall reguliert.
 	virtual void update(void) {
 		pressure = Signal_Druck.getRaw(); //AUTOMATIC PRESSURE CONTROL
